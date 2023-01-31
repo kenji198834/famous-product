@@ -18,6 +18,13 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post = Post.find(params[:id])
+    if @post.destroy
+      redirect_to root_path
+    end
+  end
+
   def edit
     @post = Post.find(params[:id])
   end
