@@ -5,6 +5,6 @@
     <p class="card__summary">
       <%= post.message %>
     </p>
-    <%= link_to "by#{post.user.nickname}", root_path, class: :card__user %>
+    <%= link_to "by#{post.user.nickname}", "/users/#{post.user.id}", class: :card__user %>
   </div>
 </div>
