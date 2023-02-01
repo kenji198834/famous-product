@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_many :comments
 
   validates :nickname, presence: true
+  validates :product, presence: true
 end

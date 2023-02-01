@@ -27,6 +27,11 @@
           <%= f.text_field :nickname, class: :form_string %>
         </div>
 
+        <div class="field">
+          <%= f.label :product, "好きな名物" %><br />
+          <%= f.text_area :product, class: :form__text %>
+        </div>
+
         <div class="actions">
           <%= f.submit "新規登録", class: :form__btn  %>
         </div>
