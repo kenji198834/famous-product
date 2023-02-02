@@ -63,6 +63,11 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include("Password is too long (maximum is 128 characters)")
       end
+      it '好きな名物が空では登録できない' do
+        @user.product = ''
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Product can't be blank")
+      end
     end
   end
 end

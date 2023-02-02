@@ -4,6 +4,6 @@ FactoryBot.define do
     email                 {Faker::Internet.free_email}
     password              {Faker::Internet.password(min_length: 6)}
     password_confirmation {password}
-    product               {Faker::Name.initials(number: 2)}
+    product               { Faker::Lorem.sentence }
   end
 end
