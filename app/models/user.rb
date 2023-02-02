@@ -7,6 +7,6 @@ class User < ApplicationRecord
   has_many :posts
   has_many :comments
 
-  validates :nickname, presence: true
+  validates :nickname, presence: true, length: { maximum: 6 }
   validates :product, presence: true
 end
