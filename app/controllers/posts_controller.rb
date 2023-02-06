@@ -4,6 +4,8 @@ class PostsController < ApplicationController
   
   def index
     @posts = Post.all.order('created_at DESC')
+    @prefecture = Prefecture.find(params[:prefecture_id])
+    @posts = @prefecture.posts.includes(:post)
   end
 
   def new
@@ -48,7 +50,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :message, :image, :prefecture_id).merge(user_id: current_user.id)
+    params.require(:post).permit(:title, :message, :image, prefecture_ids: []).merge(user_id: current_user.id)
   end
 
   def move_to_index
