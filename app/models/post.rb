@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  
+  extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :user
   belongs_to :prefecture
   has_many :comments, dependent: :destroy
