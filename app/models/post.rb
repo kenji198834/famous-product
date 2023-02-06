@@ -4,6 +4,8 @@ class Post < ApplicationRecord
   belongs_to :prefecture
   has_many :comments, dependent: :destroy
   has_one_attached :image
+  has_many :post_prefectures
+  has_many :prefectures, through: :post_prefectures
 
   validates :title, presence: true
   validates :message, presence: true
